@@ -27,7 +27,7 @@ fn main() {
                 println!("You got it! {guess} was the answer 👑");
                 break;
             }
-            Ordering::Greater | Ordering::Less if attempt == AMOUNT_OF_TRIES => {
+            Ordering::Less | Ordering::Greater if attempt == AMOUNT_OF_TRIES => {
                 println!("You ran out of tries!\n{secret_number} was the answer!");
                 break;
             }
