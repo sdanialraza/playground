@@ -41,7 +41,7 @@ fn main() {
 
         table.add_row(Row::new(vec![
             Cell::new(&format!("{} x {}", number, multiplier)),
-            Cell::new(&format!("{}", product)),
+            Cell::new(&product.to_string()),
         ]));
     }
 
