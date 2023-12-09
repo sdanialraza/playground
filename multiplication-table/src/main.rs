@@ -1,12 +1,12 @@
 use prettytable::{Cell, Row, Table};
-use std::io;
+use std::io::stdin;
 
 fn main() {
     println!("Please enter a number for the multiplication table (1-255):");
 
     let mut number = String::new();
 
-    io::stdin()
+    stdin()
         .read_line(&mut number)
         .expect("Failed to read the number");
 
@@ -22,7 +22,7 @@ fn main() {
 
     let mut limit = String::new();
 
-    io::stdin()
+    stdin()
         .read_line(&mut limit)
         .expect("Failed to read the limit");
 
