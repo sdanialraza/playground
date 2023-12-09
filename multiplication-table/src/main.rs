@@ -10,9 +10,9 @@ fn main() {
         .read_line(&mut number)
         .expect("Failed to read the number");
 
-    let number: u8 = match number.trim().parse() {
-        Ok(num) => num,
-        Err(_) => {
+    let number: u16 = match number.trim().parse() {
+        Ok(num) if num <= 255 => num,
+        _ => {
             eprintln!("Invalid input, please enter a valid number");
             return;
         }
@@ -26,9 +26,9 @@ fn main() {
         .read_line(&mut limit)
         .expect("Failed to read the limit");
 
-    let limit: u8 = match limit.trim().parse() {
-        Ok(num) => num,
-        Err(_) => {
+    let limit: u16 = match limit.trim().parse() {
+        Ok(num) if num <= 255 => num,
+        _ => {
             eprintln!("Invalid input, please enter a valid limit");
             return;
         }
