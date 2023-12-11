@@ -12,7 +12,7 @@ fn main() {
     let limit: u8 = match limit.trim().parse() {
         Ok(limit) if limit < 128 => limit,
         _ => {
-            eprintln!("Invalid input, please enter a valid limit");
+            eprintln!("The limit must be less than 128");
             return;
         }
     };
