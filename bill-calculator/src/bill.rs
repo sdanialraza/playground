@@ -25,15 +25,15 @@ impl Bill {
     }
 
     pub fn resolve(&self) -> f32 {
-        let mut power_bill = 0.0;
+        let mut bill = 0.0;
 
         for usage_hours in self.usage_hours.iter() {
             match usage_hours {
-                1..=4 => power_bill += *usage_hours as f32 * self.price_range.1,
-                _ => power_bill += *usage_hours as f32 * 3.5,
+                1..=4 => bill += *usage_hours as f32 * self.price_range.1,
+                _ => bill += *usage_hours as f32 * 3.5,
             }
         }
 
-        power_bill
+        bill
     }
 }
