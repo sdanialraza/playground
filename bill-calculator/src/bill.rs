@@ -28,9 +28,10 @@ impl Bill {
         let mut bill = 0.0;
 
         for hourly_usage in self.daily_usage.iter() {
-            match hourly_usage {
-                1..=4 => bill += *hourly_usage as f32 * self.price_range.1,
-                _ => bill += *hourly_usage as f32 * 3.5,
+            if self.price_range.0.contains(hourly_usage) {
+                bill += *hourly_usage as f32 * self.price_range.1
+            } else {
+                bill += *hourly_usage as f32 * 3.5;
             }
         }
 
