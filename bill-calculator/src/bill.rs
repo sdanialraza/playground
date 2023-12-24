@@ -3,19 +3,19 @@ use std::ops::RangeInclusive;
 #[derive(Debug)]
 pub struct Bill {
     pub price_range: (RangeInclusive<u32>, f32),
-    pub usage_hours: Vec<u32>,
+    pub daily_usage: Vec<u32>,
 }
 
 impl Bill {
     pub const fn new() -> Self {
         Bill {
             price_range: (1..=4, 2.5),
-            usage_hours: Vec::new(),
+            daily_usage: Vec::new(),
         }
     }
 
-    pub fn change_usage_hours(&mut self, usage_hours: Vec<u32>) -> &mut Self {
-        self.usage_hours = usage_hours;
+    pub fn change_daily_usage(&mut self, daily_usage: Vec<u32>) -> &mut Self {
+        self.daily_usage = daily_usage;
         self
     }
 
@@ -24,13 +24,13 @@ impl Bill {
         self
     }
 
-    pub fn resolve(&self) -> f32 {
+    pub fn calculate(&self) -> f32 {
         let mut bill = 0.0;
 
-        for usage_hours in self.usage_hours.iter() {
-            match usage_hours {
-                1..=4 => bill += *usage_hours as f32 * self.price_range.1,
-                _ => bill += *usage_hours as f32 * 3.5,
+        for hourly_usage in self.daily_usage.iter() {
+            match hourly_usage {
+                1..=4 => bill += *hourly_usage as f32 * self.price_range.1,
+                _ => bill += *hourly_usage as f32 * 3.5,
             }
         }
 
