@@ -11,5 +11,5 @@ fn main() {
 
     let bill = bill.change_price_range((1..=5, 10.0));
 
-    println!("{}", bill.calculate()) // 235
+    println!("{}", bill.calculate()) // 267.5
 }
