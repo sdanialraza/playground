@@ -14,14 +14,12 @@ impl Bill {
         }
     }
 
-    pub fn change_daily_usage(&mut self, daily_usage: Vec<u32>) -> &mut Self {
+    pub fn change_daily_usage(&mut self, daily_usage: Vec<u32>) {
         self.daily_usage = daily_usage;
-        self
     }
 
-    pub fn change_price_range(&mut self, price_range: (RangeInclusive<u32>, f32)) -> &mut Self {
+    pub fn change_price_range(&mut self, price_range: (RangeInclusive<u32>, f32)) {
         self.price_range = price_range;
-        self
     }
 
     pub fn calculate(&self) -> f32 {
