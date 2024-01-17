@@ -39,7 +39,7 @@ fn fibonacci_sequence(limit: u8) -> Vec<u128> {
         second = next;
     }
 
-    return sequence;
+    sequence
 }
 
 fn fibonacci_sequence_size(length: u8) -> Vec<u128> {
@@ -57,5 +57,5 @@ fn fibonacci_sequence_size(length: u8) -> Vec<u128> {
         second = next
     }
 
-    return sequence;
+    sequence
 }
