@@ -6,9 +6,7 @@ fn main() {
 
     let mut number = String::new();
 
-    stdin()
-        .read_line(&mut number)
-        .expect("Failed to read the number");
+    stdin().read_line(&mut number).expect("Failed to read the number");
 
     let number: u16 = match number.trim().parse() {
         Ok(num) if num <= 255 => num,
@@ -22,9 +20,7 @@ fn main() {
 
     let mut limit = String::new();
 
-    stdin()
-        .read_line(&mut limit)
-        .expect("Failed to read the limit");
+    stdin().read_line(&mut limit).expect("Failed to read the limit");
 
     let limit: u16 = match limit.trim().parse() {
         Ok(num) if num <= 255 => num,

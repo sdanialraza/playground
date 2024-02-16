@@ -1,5 +1,5 @@
 use rand::Rng;
-use std::{cmp::Ordering, io};
+use std::{cmp::Ordering, io::stdin};
 
 const MAX_SECRET_NUMBER: u8 = 10;
 const AMOUNT_OF_TRIES: u8 = 3;
@@ -13,9 +13,7 @@ fn main() {
     for attempt in 1..=AMOUNT_OF_TRIES {
         let mut guess = String::new();
 
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line.");
+        stdin().read_line(&mut guess).expect("Failed to read line.");
 
         let guess: u8 = match guess.trim().parse() {
             Ok(num) => num,

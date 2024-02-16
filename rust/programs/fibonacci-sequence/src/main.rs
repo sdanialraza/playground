@@ -5,9 +5,7 @@ fn main() {
 
     let mut limit = String::new();
 
-    stdin()
-        .read_line(&mut limit)
-        .expect("Failed to read the number");
+    stdin().read_line(&mut limit).expect("Failed to read the number");
 
     let limit: u8 = match limit.trim().parse() {
         Ok(limit) if limit < 128 => limit,
