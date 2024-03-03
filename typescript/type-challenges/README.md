@@ -8,11 +8,11 @@ The problems are categorized into different folders based on the difficulty leve
 
 - [Warm-up](./src/warm) - A warm-up problem to get started.
 
-<!--
 - [Easy](./src/easy)
+<!--
 - [Medium](./src/medium)
 - [Hard](./src/hard)
 - [Extreme](./src/extreme)
--->
+  -->
 
 You can find the unsolved problems [here](https://github.com/type-challenges/type-challenges/tree/main/questions).
